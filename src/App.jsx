@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 export default function App() {
   const [color, setColor] = useState('#000000');
-  const [savedColor, setSavedColor] = useState([]);
+  const [savedColor, setSavedColor] = useState(JSON.parse(localStorage.getItem('saved-color')) || []);
 
   const generateNewColor = () => {
     const char = '0123456789ABCDEF';
@@ -18,10 +18,12 @@ export default function App() {
 
   const saveColor = () => {
     setSavedColor([...savedColor, color]);
+    localStorage.setItem('saved-color', JSON.stringify([...savedColor, color]));
   };
 
   const clearSavedColor = () => {
     setSavedColor([]);
+    localStorage.removeItem('saved-color');
   };
 
   return (
