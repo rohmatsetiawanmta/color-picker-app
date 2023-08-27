@@ -30,7 +30,7 @@ export default function App() {
     <div className='bg-slate-200 w-screen h-screen flex flex-col justify-center items-center gap-8'>
       <div className='text-4xl font-bold'>COLOR RANDOMIZER</div>
       <div className='bg-slate-100 p-4 rounded-xl flex justify-center items-center gap-4'>
-        <div className='flex flex-col justify-center items-center'>
+        <div className='flex flex-col justify-center items-center gap-2'>
           <div className='w-[200px] h-[200px] rounded-xl' style={{ background: color }}></div>
           <div className='font-medium text-xl'>{color}</div>
         </div>
